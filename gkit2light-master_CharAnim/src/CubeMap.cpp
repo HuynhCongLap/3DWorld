@@ -9,7 +9,7 @@ void CubeMap::init()
        // . dessiner la cubemap a l'infini
     program_cubemap= read_program("tutos/cubemap.glsl");
     program_print_errors(program_cubemap);
-    image= read_image_data("tutos/Cubemap.png");
+    image= read_image_data("tutos/cubemap.png");
     int size= image.width / 6;
 
     GLenum data_format;
