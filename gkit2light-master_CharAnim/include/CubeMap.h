@@ -11,6 +11,7 @@ class CubeMap
         virtual ~CubeMap();
         void drawCubeMap(Transform &view, Transform &projection);
         void init();
+        unsigned int texture;
 
 
     protected:
@@ -19,7 +20,7 @@ class CubeMap
         unsigned int program_cubemap;
         ImageData image;
         unsigned int vao_null;
-        unsigned int texture;
+
 
 };
 

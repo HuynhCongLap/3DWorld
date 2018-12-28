@@ -55,6 +55,7 @@ class Terrain
         Mesh m_light_mesh = read_mesh("data/cube.obj");
         //----------------CUBE MAP------------------------
         CubeMap m_cubemap;
+        unsigned int sampler;
     //-------------------FRUSTRUM-------------------------------------
 
 };

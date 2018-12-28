@@ -93,7 +93,13 @@ void Terrain::init_terrain() // bind VAO and VBO
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
+    glGenSamplers(1, &sampler);
+    glSamplerParameteri(sampler, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glSamplerParameteri(sampler, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glSamplerParameteri(sampler, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+    glSamplerParameteri(sampler, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 
+    glBindTexture(GL_TEXTURE_2D,0);
 }
 
 void Terrain::draw_terrain(Orbiter &camera)
@@ -104,26 +110,34 @@ void Terrain::draw_terrain(Orbiter &camera)
     m_projection = m_camera.projection(window_width(),window_height(),45);
 
     glUseProgram(m_terrain_program);
+
     program_uniform(m_terrain_program, "model",m_model);
     program_uniform(m_terrain_program, "view",m_view);
     program_uniform(m_terrain_program, "projection",m_projection);
-    program_uniform(m_terrain_program, "viewPos",m_camera_pos);
+    program_uniform(m_terrain_program, "viewPos",m_view);
+    program_uniform(m_terrain_program, "camera_pos_inverse",Inverse(m_view)(Point(0, 0, 0)));
     program_uniform(m_terrain_program, "lightSpaceMatrix",shadow.lightSpaceMatrix());
 
     program_uniform(m_terrain_program, "lightPos",lightPos);
     program_uniform(m_terrain_program, "lightColor",Point(1.0f, 1.0f, 1.0f));
     program_uniform(m_terrain_program, "objectColor",Point(1.0f, 0.5f, 0.31f));
-    program_uniform(m_terrain_program, "shadowMap",0);
+
     glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, m_cubemap.texture);
+
+    // texture
+    glActiveTexture(GL_TEXTURE0+1);
     glBindTexture(GL_TEXTURE_2D, shadow.depthMap);
 
+    program_uniform(m_terrain_program, "shadowMap",1);
+    program_uniform(m_terrain_program, "texture0", 0);
     glBindVertexArray(terrain_vao);
     for(int i=0 ; i<m_boxs.size(); i++) // Test visibility
      glDrawArraysInstancedBaseInstance(GL_TRIANGLES,0, m_terrain_mesh.vertex_count(), m_boxs[i].m_number_cubes,m_boxs[i].ID_INSTANCE);
 
     glUseProgram(0);
     glBindVertexArray(0);
-
+    glActiveTexture(0);
 
     //program_uniform(m_terrain_program, "mvpMatrix",m_projection*m_view*m_model);
 }

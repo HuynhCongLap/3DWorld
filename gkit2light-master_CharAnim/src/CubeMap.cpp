@@ -9,7 +9,7 @@ void CubeMap::init()
        // . dessiner la cubemap a l'infini
     program_cubemap= read_program("tutos/cubemap.glsl");
     program_print_errors(program_cubemap);
-    image= read_image_data("tutos/cubemap_debug.png");
+    image= read_image_data("tutos/Cubemap.png");
     int size= image.width / 6;
 
     GLenum data_format;
@@ -92,9 +92,9 @@ void CubeMap::drawCubeMap(Transform &view, Transform &projection)
         glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
 
         // sampler2D declare par le fragment shader
-        GLint location= glGetUniformLocation(program_cubemap, "texture0");
-        glUniform1i(location, 0);
-        // ou program_uniform(program, "texture0", 0);
+        //GLint location= glGetUniformLocation(program_cubemap, "texture0");
+        //glUniform1i(location, 0);
+        program_uniform(program_cubemap, "texture0", 0);
 
         program_uniform(program_cubemap, "vpInvMatrix", Inverse(projection * view));
         program_uniform(program_cubemap, "camera_position", Inverse(view)(Point(0, 0, 0)));

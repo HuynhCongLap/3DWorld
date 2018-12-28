@@ -45,12 +45,16 @@ in VS_OUT {
     vec4 FragPosLightSpace;
 } fs_in;
 uniform sampler2D shadowMap;
+uniform samplerCube texture0;
 
+uniform vec3 camera_pos_inverse;
 uniform vec3 lightPos;
 uniform vec3 viewPos;
 uniform vec3 lightColor;
 uniform vec3 objectColor;
 in vec4 screenPos;
+
+
 float ShadowCalculation(vec4 fragPosLightSpace)
 {
     // perform perspective divide
@@ -113,7 +117,10 @@ void main( )
     float shadow = ShadowCalculation(fs_in.FragPosLightSpace);                      
     vec3 lighting = (ambient + (1.0 - shadow) * (diffuse + specular)) * color;    
     
-    FragColor = vec4(lighting, 1.0);
+    vec3 m= reflect(normalize(fs_in.FragPos - camera_pos_inverse), normalize(fs_in.Normal));
+    vec4 color1= texture(texture0, m);
+    FragColor= color1;
+    //FragColor = vec4(lighting, 1.0);
 }
 
 #endif
