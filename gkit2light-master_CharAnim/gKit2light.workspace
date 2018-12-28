@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="gKit2light">
+		<Project filename="shader_kit.cbp" active="1">
+		</Project>
+		<Project filename="image_viewer.cbp">
+		</Project>
+		<Project filename="tuto1.cbp">
+		</Project>
+		<Project filename="tuto2.cbp">
+		</Project>
+		<Project filename="tuto3.cbp">
+		</Project>
+		<Project filename="tuto4.cbp">
+		</Project>
+		<Project filename="tuto5.cbp">
+		</Project>
+		<Project filename="tuto6.cbp">
+		</Project>
+		<Project filename="tuto7.cbp">
+		</Project>
+		<Project filename="tuto8.cbp">
+		</Project>
+		<Project filename="tuto9.cbp">
+		</Project>
+		<Project filename="tuto9_texture1.cbp">
+		</Project>
+		<Project filename="tuto9_textures.cbp">
+		</Project>
+		<Project filename="tuto_transform.cbp">
+		</Project>
+		<Project filename="tuto_pad.cbp">
+		</Project>
+		<Project filename="tuto1GL.cbp">
+		</Project>
+		<Project filename="tuto2GL.cbp">
+		</Project>
+		<Project filename="tuto2GL_app.cbp">
+		</Project>
+		<Project filename="tuto3GL.cbp">
+		</Project>
+		<Project filename="tuto3GL_reflect.cbp">
+		</Project>
+		<Project filename="tuto4GL.cbp">
+		</Project>
+		<Project filename="tuto4GL_normals.cbp">
+		</Project>
+		<Project filename="tuto5GL.cbp">
+		</Project>
+		<Project filename="tuto5GL_sampler.cbp">
+		</Project>
+		<Project filename="tuto5GL_samplers.cbp">
+		</Project>
+		<Project filename="tuto5GL_multi.cbp">
+		</Project>
+		<Project filename="tuto6GL.cbp">
+		</Project>
+		<Project filename="tuto6GL_buffer.cbp">
+		</Project>
+		<Project filename="mesh_viewer_sort.cbp">
+		</Project>
+		<Project filename="tuto_framebuffer.cbp">
+		</Project>
+		<Project filename="tuto_storage.cbp">
+		</Project>
+		<Project filename="tuto_storage_buffer.cbp">
+		</Project>
+		<Project filename="tuto_storage_texture.cbp">
+		</Project>
+		<Project filename="min_data.cbp">
+		</Project>
+		<Project filename="mesh_viewer.cbp">
+		</Project>
+		<Project filename="tuto_time.cbp">
+		</Project>
+		<Project filename="tuto_mdi.cbp">
+		</Project>
+		<Project filename="tuto_is.cbp">
+		</Project>
+		<Project filename="tuto_raytrace_fragment.cbp">
+		</Project>
+	</Workspace>
+</CodeBlocks_workspace_file>

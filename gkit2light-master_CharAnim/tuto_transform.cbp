@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tuto_transform" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="debug|x64">
+				<Option output="bin/tuto_transform" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/debug/tuto_transform" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-m64" />
+					<Add option="-DDEBUG" />
+					<Add option="-mtune=native -march=native" />
+					<Add option="-std=c++11" />
+					<Add option="-W -Wall -Wextra -Wsign-compare -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable" />
+					<Add option="-pipe" />
+					<Add option="-flto" />
+					<Add option="-g" />
+					<Add directory="." />
+					<Add directory="src/gKit" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add option="-flto" />
+					<Add option="-g" />
+					<Add library="GLEW" />
+					<Add library="SDL2" />
+					<Add library="SDL2_image" />
+					<Add library="GL" />
+				</Linker>
+			</Target>
+			<Target title="release|x64">
+				<Option output="bin/tuto_transform" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/release/tuto_transform" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-m64" />
+					<Add option="-mtune=native -march=native" />
+					<Add option="-std=c++11" />
+					<Add option="-W -Wall -Wextra -Wsign-compare -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable" />
+					<Add option="-pipe" />
+					<Add option="-flto" />
+					<Add option="-fopenmp" />
+					<Add directory="." />
+					<Add directory="src/gKit" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add option="-flto" />
+					<Add option="-fopenmp" />
+					<Add library="GLEW" />
+					<Add library="SDL2" />
+					<Add library="SDL2_image" />
+					<Add library="GL" />
+				</Linker>
+			</Target>
+			<Target title="debug|x32">
+				<Option output="bin/tuto_transform" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x32/debug/tuto_transform" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-m32" />
+					<Add option="-DDEBUG" />
+					<Add option="-mtune=native -march=native" />
+					<Add option="-std=c++11" />
+					<Add option="-W -Wall -Wextra -Wsign-compare -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable" />
+					<Add option="-pipe" />
+					<Add option="-flto" />
+					<Add option="-g" />
+					<Add directory="." />
+					<Add directory="src/gKit" />
+				</Compiler>
+				<Linker>
+					<Add option="-m32" />
+					<Add option="-L/usr/lib32" />
+					<Add option="-flto" />
+					<Add option="-g" />
+					<Add library="GLEW" />
+					<Add library="SDL2" />
+					<Add library="SDL2_image" />
+					<Add library="GL" />
+				</Linker>
+			</Target>
+			<Target title="release|x32">
+				<Option output="bin/tuto_transform" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x32/release/tuto_transform" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-m32" />
+					<Add option="-mtune=native -march=native" />
+					<Add option="-std=c++11" />
+					<Add option="-W -Wall -Wextra -Wsign-compare -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable" />
+					<Add option="-pipe" />
+					<Add option="-flto" />
+					<Add option="-fopenmp" />
+					<Add directory="." />
+					<Add directory="src/gKit" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-m32" />
+					<Add option="-L/usr/lib32" />
+					<Add option="-flto" />
+					<Add option="-fopenmp" />
+					<Add library="GLEW" />
+					<Add library="SDL2" />
+					<Add library="SDL2_image" />
+					<Add library="GL" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="src/gKit/mesh.cpp">
+		</Unit>
+		<Unit filename="src/gKit/texture.cpp">
+		</Unit>
+		<Unit filename="src/gKit/app.cpp">
+		</Unit>
+		<Unit filename="src/gKit/program.cpp">
+		</Unit>
+		<Unit filename="src/gKit/app_time.cpp">
+		</Unit>
+		<Unit filename="src/gKit/draw.cpp">
+		</Unit>
+		<Unit filename="src/gKit/mat.cpp">
+		</Unit>
+		<Unit filename="src/gKit/wavefront.cpp">
+		</Unit>
+		<Unit filename="src/gKit/text.cpp">
+		</Unit>
+		<Unit filename="src/gKit/gamepads.cpp">
+		</Unit>
+		<Unit filename="src/gKit/image_hdr.cpp">
+		</Unit>
+		<Unit filename="src/gKit/rgbe.cpp">
+		</Unit>
+		<Unit filename="src/gKit/window.cpp">
+		</Unit>
+		<Unit filename="src/gKit/color.cpp">
+		</Unit>
+		<Unit filename="src/gKit/image.cpp">
+		</Unit>
+		<Unit filename="src/gKit/widgets.cpp">
+		</Unit>
+		<Unit filename="src/gKit/uniforms.cpp">
+		</Unit>
+		<Unit filename="src/gKit/vec.cpp">
+		</Unit>
+		<Unit filename="src/gKit/image_io.cpp">
+		</Unit>
+		<Unit filename="src/gKit/orbiter.cpp">
+		</Unit>
+		<Unit filename="src/gKit/orbiter.h">
+		</Unit>
+		<Unit filename="src/gKit/gamepads.h">
+		</Unit>
+		<Unit filename="src/gKit/quaternion.h">
+		</Unit>
+		<Unit filename="src/gKit/draw.h">
+		</Unit>
+		<Unit filename="src/gKit/texture.h">
+		</Unit>
+		<Unit filename="src/gKit/image_io.h">
+		</Unit>
+		<Unit filename="src/gKit/mesh.h">
+		</Unit>
+		<Unit filename="src/gKit/uniforms.h">
+		</Unit>
+		<Unit filename="src/gKit/mat.h">
+		</Unit>
+		<Unit filename="src/gKit/rgbe.h">
+		</Unit>
+		<Unit filename="src/gKit/vec.h">
+		</Unit>
+		<Unit filename="src/gKit/window.h">
+		</Unit>
+		<Unit filename="src/gKit/program.h">
+		</Unit>
+		<Unit filename="src/gKit/image.h">
+		</Unit>
+		<Unit filename="src/gKit/glcore.h">
+		</Unit>
+		<Unit filename="src/gKit/text.h">
+		</Unit>
+		<Unit filename="src/gKit/image_hdr.h">
+		</Unit>
+		<Unit filename="src/gKit/wavefront.h">
+		</Unit>
+		<Unit filename="src/gKit/widgets.h">
+		</Unit>
+		<Unit filename="src/gKit/app_time.h">
+		</Unit>
+		<Unit filename="src/gKit/color.h">
+		</Unit>
+		<Unit filename="src/gKit/app.h">
+		</Unit>
+		<Unit filename="tutos/tuto_transform.cpp">
+		</Unit>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
+
