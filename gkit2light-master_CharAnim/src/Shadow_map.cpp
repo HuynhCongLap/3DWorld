@@ -39,7 +39,7 @@ void Shadow_map::getLightPoint(Point light_pos)
 
 Transform Shadow_map::lightProjection()
 {
-    return Ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+    return Ortho(-50.0f, 50.0f, -50.0f, 50.0f, near_plane, far_plane);
 }
 Transform Shadow_map::lightView()
 {

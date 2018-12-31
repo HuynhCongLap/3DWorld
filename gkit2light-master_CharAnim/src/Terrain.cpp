@@ -16,9 +16,14 @@ Terrain::~Terrain()
 void Terrain::loadTerrain(const char* filename)
 {
     Image data = read_image(filename);
-    float scale = 50;
+    float scale = 20;
 
-
+    for(int y= 0; y +1 < data.height(); y++)
+    for(int x= 0; x +1 < data.width(); x++)
+    {
+         if(data(x,y).r > max_height)
+            max_height = data(x,y).r;
+    }
     int count = 0;
     int cube_number = 0;
     for(int y= 0; y +1 < data.height(); y +=scale_factor)
@@ -31,10 +36,14 @@ void Terrain::loadTerrain(const char* filename)
             for(int iy= y; iy  < y +scale_factor && iy +1 < data.height(); iy++)
             for(int ix= x; ix  < x +scale_factor && ix +1 < data.width(); ix++)
             {
-                m_cubePos.push_back(vec3(ix,data(ix, iy).r * scale,iy));
+                m_cubePos.push_back(vec3(ix,int(data(ix, iy).r/max_height*layer),iy));
                 cube_number++;
             }
             m_boxs.push_back(Box(scale_factor, Point(x,0,y),count,cube_number));
+
+
+            static_light_pos.push_back(Point(vec3(x+32,int(data(x, y).r/max_height*layer),y+32)));
+
             count += cube_number;
             cout<<"Cube numbers: "<<cube_number<<endl;
             cube_number = 0;
@@ -44,6 +53,7 @@ void Terrain::loadTerrain(const char* filename)
 
 void Terrain::init_terrain() // bind VAO and VBO
 {
+    m_model = Scale(1,1,1);
     m_cubemap.init();
     m_terrain_mesh = read_mesh("data/cube.obj");
     m_terrain_program = read_program("tutos/terrain_shader.glsl");
@@ -98,14 +108,24 @@ void Terrain::init_terrain() // bind VAO and VBO
     glSamplerParameteri(sampler, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glSamplerParameteri(sampler, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
     glSamplerParameteri(sampler, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
-
+    glGenerateMipmap(GL_TEXTURE_2D);
+    materials[0] = read_texture(0, "data/blocks/snow.png");
+    materials[1] = read_texture(0, "data/blocks/wool_colored_lime.png");
+    materials[2] = read_texture(0, "data/blocks/concrete_green.png");
+    materials[3] = read_texture(0, "data/blocks/concrete_brown.png");
+    materials[4] = read_texture(0, "data/blocks/grass_side.png");
+    materials[5] = read_texture(0, "data/blocks/dirt.png");
     glBindTexture(GL_TEXTURE_2D,0);
-}
 
+    m_space_ship.init();
+}
+float ran()
+{
+    return ((float)rand()/(float)(RAND_MAX));
+}
 void Terrain::draw_terrain(Orbiter &camera)
 {
     m_camera = camera;
-    m_model = Identity();
     m_view  = m_camera.view();
     m_projection = m_camera.projection(window_width(),window_height(),45);
 
@@ -120,17 +140,66 @@ void Terrain::draw_terrain(Orbiter &camera)
 
     program_uniform(m_terrain_program, "lightPos",lightPos);
     program_uniform(m_terrain_program, "lightColor",Point(1.0f, 1.0f, 1.0f));
-    program_uniform(m_terrain_program, "objectColor",Point(1.0f, 0.5f, 0.31f));
+    program_uniform(m_terrain_program, "adjust",m_adjust);
+
 
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_CUBE_MAP, m_cubemap.texture);
-
+    glBindSampler(0, sampler);
     // texture
     glActiveTexture(GL_TEXTURE0+1);
     glBindTexture(GL_TEXTURE_2D, shadow.depthMap);
+    glBindSampler(1, sampler);
 
-    program_uniform(m_terrain_program, "shadowMap",1);
+    for(int i=0; i<6; i++)
+    {
+        glActiveTexture(GL_TEXTURE0+2+i);
+        glBindTexture(GL_TEXTURE_2D, materials[i]);
+        glBindSampler(2+i, sampler);
+    }
+
     program_uniform(m_terrain_program, "texture0", 0);
+    program_uniform(m_terrain_program, "shadowMap",1);
+    program_uniform(m_terrain_program, "ice_texture",2);
+    program_uniform(m_terrain_program, "land_texture",3);
+    program_uniform(m_terrain_program, "mou_texture",4);
+    program_uniform(m_terrain_program, "top_texture",5);
+    program_uniform(m_terrain_program, "grass_side_texture",6);
+    program_uniform(m_terrain_program, "top_grass",7);
+
+    program_uniform(m_terrain_program,"pointLight[0].position", m_space_ship_pos);
+    program_uniform(m_terrain_program,"pointLight[0].ambient", vec3(ran(), ran(), ran()));
+    program_uniform(m_terrain_program,"pointLight[0].diffuse", vec3(ran(), ran(), ran()));
+    program_uniform(m_terrain_program,"pointLight[0].specular", vec3(ran(), ran(), ran()));
+    program_uniform(m_terrain_program,"pointLight[0].constant", float(1));
+    program_uniform(m_terrain_program,"pointLight[0].linear", float(0.09));
+    program_uniform(m_terrain_program,"pointLight[0].quadratic", float(0.032));
+    for(int i=1; i<nb_light; i++){
+        light_pos[11] =  i+'0';
+        light_ambient[11] =  i+'0';
+        light_diffuse[11] =  i+'0';
+        light_specular[11] =  i+'0';
+        light_constant[11] =  i+'0';
+        light_lightnear[11] =  i+'0';
+        light_quadratic[11] =  i+'0';
+        int offset = 30*i;
+        float off_X = offset*sin(global_time()/5000);
+        float off_Z = offset*cos(global_time()/5000);
+
+        Point l_pos = Point(static_light_pos[i].x+i,static_light_pos[i].y-2,static_light_pos[i].z+i);
+        program_uniform(m_terrain_program,light_pos, l_pos);
+
+        program_uniform(m_terrain_program,light_ambient, vec3( 1 , 0.1 + 0.3*sin(global_time()/1000), 0.1 + 0.3*cos(global_time()/1000) ));
+        program_uniform(m_terrain_program,light_diffuse, vec3(1  , 0.2, 0.5));
+        program_uniform(m_terrain_program,light_specular, vec3(0.5, 0.5, 0.5));
+
+        program_uniform(m_terrain_program,light_constant, float(0.1));
+
+        program_uniform(m_terrain_program,light_lightnear, float(0.09));
+
+        program_uniform(m_terrain_program,light_quadratic, float(0.01));
+
+    }
     glBindVertexArray(terrain_vao);
     for(int i=0 ; i<m_boxs.size(); i++) // Test visibility
      glDrawArraysInstancedBaseInstance(GL_TRIANGLES,0, m_terrain_mesh.vertex_count(), m_boxs[i].m_number_cubes,m_boxs[i].ID_INSTANCE);
@@ -139,12 +208,13 @@ void Terrain::draw_terrain(Orbiter &camera)
     glBindVertexArray(0);
     glActiveTexture(0);
 
-    //program_uniform(m_terrain_program, "mvpMatrix",m_projection*m_view*m_model);
+    m_space_ship.draw(m_projection*m_view*m_space_ship_model,m_space_ship_model,m_view,m_cubemap.texture);
+
 }
 
 void Terrain::draw_simple_terrain()
 {
-    m_model = Identity();
+
     glUseProgram(m_simple_terrain_program);
     program_uniform(m_simple_terrain_program, "model",m_model);
     program_uniform(m_simple_terrain_program, "lightSpaceMatrix", shadow.lightSpaceMatrix());
@@ -162,6 +232,15 @@ void Terrain::draw_simple_terrain()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram(0);
     glBindVertexArray(0);
+
+}
+
+void  Terrain::adjust_light(bool add) // adjust the light of terrain
+{
+    if(add)
+        m_adjust+=0.1; // add the light of reflect to terrain
+    else
+        m_adjust-=0.1;
 }
 
 //-------------------SHADOW------------------------
@@ -207,6 +286,7 @@ void Terrain::draw_boxs()
         m_boxs[i].draw_box(m_camera);
     }
 }
+
 
 
 

@@ -10,7 +10,25 @@ void Orbiter::lookat( const Point& center, const float size )
     m_position= vec2(0, 0);
     m_rotation= vec2(0, 0);
     m_size= size;
-    m_radius= size;
+    m_radius= 300;
+}
+
+void Orbiter::mylookat(const float size )
+{
+    std::cout<<"Center:"<< m_center;
+    std::cout<<" Pos:" << position()<<std::endl;
+    Vector add(position() - m_center);
+    normalize(add);
+    m_center.x -=add.x/(size*7);
+    m_center.y -=add.y/(size*7);
+    m_center.z -=add.z/(size*7);
+    m_size= size;
+    m_radius= 300;
+}
+
+Point Orbiter::getCenter()
+{
+    return m_center;
 }
 
 void Orbiter::lookat( const Point& pmin, const Point& pmax )

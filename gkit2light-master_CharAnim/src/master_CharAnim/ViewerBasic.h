@@ -64,6 +64,8 @@ protected:
     //---------------------------------
 
     bool m_bouding_boxs = false;
+    bool space_ship_move = true;
+    int space_ship_distance = 1;
 };
 
 

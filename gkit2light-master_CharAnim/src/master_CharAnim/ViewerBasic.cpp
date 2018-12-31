@@ -51,7 +51,7 @@ int ViewerBasic::init()
 //    //glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 
-    m_camera.lookat( Point(130,0,130), 400 );
+    m_camera.lookat( Point(130,50,130), 20 );
     gl.light( Point(0, 20, 20), White() );
 
     init_axe();
@@ -222,7 +222,7 @@ void ViewerBasic::manageCameraLight()
     // recupere les mouvements de la souris pour deplacer la camera, cf tutos/tuto6.cpp
     int mx, my;
     unsigned int mb= SDL_GetRelativeMouseState(&mx, &my);
-    // deplace la camera
+
     if((mb & SDL_BUTTON(1)) &&  (mb& SDL_BUTTON(3)))                 // le bouton du milieu est enfonce
         m_camera.translation( (float) mx / (float) window_width(), (float) my / (float) window_height());         // deplace le point de rotation
     else if(mb & SDL_BUTTON(1))                      // le bouton gauche est enfonce
@@ -230,45 +230,27 @@ void ViewerBasic::manageCameraLight()
     else if(mb & SDL_BUTTON(3))                 // le bouton droit est enfonce
         m_camera.move( my);               // approche / eloigne l'objet
 
-	if (key_state(SDLK_PAGEUP) && (!key_state(SDLK_LCTRL)) && (!key_state(SDLK_LALT))) { m_camera.translation(0, 0.01); }
-	if (key_state(SDLK_PAGEDOWN) && (!key_state(SDLK_LCTRL)) && (!key_state(SDLK_LALT))) { m_camera.translation(0, -0.01); }
-	if (key_state(SDLK_LEFT) && (!key_state(SDLK_LCTRL)) && (!key_state(SDLK_LALT))) { m_camera.translation(0.01, 0); }
-	if (key_state(SDLK_RIGHT) && (!key_state(SDLK_LCTRL)) && (!key_state(SDLK_LALT))) { m_camera.translation(-0.01, 0); }
-	if (key_state(SDLK_UP) && (!key_state(SDLK_LCTRL)) && (!key_state(SDLK_LALT))) { m_camera.move(1); }
-	if (key_state(SDLK_DOWN) && (!key_state(SDLK_LCTRL)) && (!key_state(SDLK_LALT))) { m_camera.move(-1); }
 
 
-    // Deplace la lumiere
-    const float step = m_camera.radius()*0.005f;
-    if (key_state(SDLK_RIGHT) && key_state(SDLK_LCTRL)) { gl.light( gl.light()+Vector(step,0,0)); }
-    if (key_state(SDLK_LEFT) && key_state(SDLK_LCTRL)) { gl.light( gl.light()+Vector(-step,0,0)); }
-    if (key_state(SDLK_UP) && key_state(SDLK_LCTRL)) { gl.light( gl.light()+Vector(0,0,-step)); }
-    if (key_state(SDLK_DOWN) && key_state(SDLK_LCTRL)) { gl.light( gl.light()+Vector(0,0,step)); }
-    if (key_state(SDLK_PAGEUP) && key_state(SDLK_LCTRL)) { gl.light( gl.light()+Vector(0,step,0)); }
-    if (key_state(SDLK_PAGEDOWN) && key_state(SDLK_LCTRL)) { gl.light( gl.light()+Vector(0,-step,0)); }
+    m_terrain.getSpaceShipPositition(m_camera.getCenter());
+    Point cam = m_camera.position();
+    //m_camera.lookat(Point(cam.x,cam.y,cam.z-20.1),300);
+    //cout<<m_camera.position()<<endl;
 
-
-
+    if (key_state('m')) { clear_key_state('m');  space_ship_move = !space_ship_move; }; // move forward
+    if(space_ship_move)
+    m_camera.mylookat(space_ship_distance);
     // (De)Active la grille / les axes
-    if (key_state('h')) help();
-    if (key_state('c')) { clear_key_state('c'); mb_cullface=!mb_cullface; if (mb_cullface) glEnable(GL_CULL_FACE);else glDisable(GL_CULL_FACE); }
     if (key_state('w')) { clear_key_state('w'); mb_wireframe=!mb_wireframe; if (mb_wireframe) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); else glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); }
-    if (key_state('g')) { b_draw_grid = !b_draw_grid; clear_key_state('g'); }
+
 
     if (key_state('b')) { m_bouding_boxs = !m_bouding_boxs; clear_key_state('b'); }
-
+    // up and down the light source
     if (key_state('u')) { m_terrain.changeLightPosition(true); clear_key_state('u'); }
     if (key_state('d')) { m_terrain.changeLightPosition(false); clear_key_state('d'); }
-
+    // adjust the light of terrain
+    if (key_state('o')) { m_terrain.adjust_light(true); clear_key_state('o'); }
+    if (key_state('p')) { m_terrain.adjust_light(false); clear_key_state('p'); }
     gl.camera(m_camera);
 
-    // AXE et GRILLE
-    gl.model( Scale(10.*step,10.0*step,10.0*step) );
-    if (b_draw_axe) gl.draw(m_axe);
-
-    //  LIGHT
-    gl.texture( 0 );
-    gl.lighting(false);
-	gl.model(Translation(Vector(gl.light()))*Scale(step, step, step));
-    gl.lighting(true);
 }

@@ -382,7 +382,7 @@
 	"orbiter.h"
 	"window.h"
 
-1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/orbiter.h
+1546106819 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/orbiter.h
 	"vec.h"
 	"mat.h"
 
@@ -392,7 +392,7 @@
 1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/wavefront.h
 	"mesh.h"
 
-1546005579 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/CubeMap.cpp
+1546267904 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/CubeMap.cpp
 	"CubeMap.h"
 
 1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/CubeMap.h
@@ -507,7 +507,7 @@
 	"uniforms.h"
 	"window.h"
 
-1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/orbiter.cpp
+1546212903 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/orbiter.cpp
 	<cstdio>
 	<algorithm>
 	"orbiter.h"
@@ -597,7 +597,7 @@
 1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/master_CharAnim/main.cpp
 	"ViewerBasic.h"
 
-1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/master_CharAnim/ViewerBasic.h
+1546215915 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/master_CharAnim/ViewerBasic.h
 	"glcore.h"
 	"window.h"
 	"program.h"
@@ -610,7 +610,7 @@
 	"app.h"
 	"Terrain.h"
 
-1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Terrain.h
+1546266431 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Terrain.h
 	<vector>
 	"mat.h"
 	"image_io.h"
@@ -618,24 +618,36 @@
 	"program.h"
 	"uniforms.h"
 	"wavefront.h"
+	"texture.h"
 	"Box.h"
 	"Shadow_map.h"
 	"CubeMap.h"
+	"Spaceship.h"
 
 1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Shadow_map.h
 	"mat.h"
 	"/usr/include/GL/glew.h"
 
-1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/master_CharAnim/ViewerBasic.cpp
+1546212969 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/master_CharAnim/ViewerBasic.cpp
 	<cassert>
 	<cmath>
 	<cstdio>
 	<iostream>
 	<ViewerBasic.h>
 
-1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Shadow_map.cpp
+1546213544 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Shadow_map.cpp
 	"Shadow_map.h"
 
-1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Terrain.cpp
+1546268050 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Terrain.cpp
 	"Terrain.h"
+
+1546114126 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Spaceship.h
+	"mesh.h"
+	"wavefront.h"
+	"program.h"
+	"orbiter.h"
+	"uniforms.h"
+
+1546114088 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Spaceship.cpp
+	"Spaceship.h"
 

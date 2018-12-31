@@ -27,7 +27,8 @@ public:
     void lookat(  const Point& center, const float size );
     //! observe le centre d'une boite englobante.
     void lookat( const Point& pmin, const Point& pmax );
-
+    void mylookat(const float size);
+    Point getCenter();
     //! change le point de vue / la direction d'observation.
     void rotation( const float x, const float y );
     //! deplace le centre / le point observe.
