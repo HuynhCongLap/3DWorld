@@ -1,0 +1,648 @@
+# depslib dependency file v1.0
+1546347754 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/Box.cpp
+	"Box.h"
+
+1546347565 /home/pin/Desktop/Project/gkit2light-master_CharAnim/include/Box.h
+	"mesh.h"
+	"draw.h"
+	"wavefront.h"
+	<vector>
+	"vec.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/mesh.h
+	<vector>
+	<unordered_map>
+	"glcore.h"
+	"vec.h"
+	"mat.h"
+	"color.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/glcore.h
+	<OpenGL/gl3.h>
+	"GL/glew.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/vec.h
+	<iostream>
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/mat.h
+	"vec.h"
+	<iostream>
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/color.h
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/draw.h
+	"mesh.h"
+	"orbiter.h"
+	"window.h"
+
+1546106819 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/orbiter.h
+	"vec.h"
+	"mat.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/window.h
+	<SDL2/SDL.h>
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/wavefront.h
+	"mesh.h"
+
+1546267904 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/CubeMap.cpp
+	"CubeMap.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/include/CubeMap.h
+	"orbiter.h"
+	"image_io.h"
+	"program.h"
+	"uniforms.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/image_io.h
+	"image.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/image.h
+	<cmath>
+	<vector>
+	<cassert>
+	<algorithm>
+	"color.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/program.h
+	<string>
+	"glcore.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/uniforms.h
+	<string>
+	"glcore.h"
+	"vec.h"
+	"mat.h"
+	"color.h"
+
+1546347664 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/Frustum.cpp
+	"Frustum.h"
+
+1546347842 /home/pin/Desktop/Project/gkit2light-master_CharAnim/include/Frustum.h
+	"Plane.h"
+	"Box.h"
+
+1546346066 /home/pin/Desktop/Project/gkit2light-master_CharAnim/include/Plane.h
+	"mat.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/app.cpp
+	<cstdio>
+	<cstring>
+	"app.h"
+	"glcore.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/app.h
+	"window.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/app_time.cpp
+	<chrono>
+	"app_time.h"
+	"texture.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/app_time.h
+	"glcore.h"
+	"app.h"
+	"text.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/text.h
+	"glcore.h"
+	"color.h"
+	"text.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/texture.h
+	"glcore.h"
+	"image.h"
+	"image_io.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/color.cpp
+	"color.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/draw.cpp
+	"draw.h"
+	"window.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/gamepads.cpp
+	<cassert>
+	<vector>
+	<stdio.h>
+	"gamepads.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/gamepads.h
+	<SDL2/SDL.h>
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/image.cpp
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/image_hdr.cpp
+	<string>
+	"rgbe.h"
+	"image_hdr.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/rgbe.h
+	<cstdio>
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/image_hdr.h
+	"image.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/image_io.cpp
+	<cstdio>
+	<string>
+	<algorithm>
+	<cmath>
+	<SDL2_image/SDL_image.h>
+	<SDL2/SDL_image.h>
+	"image_io.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/mat.cpp
+	<cassert>
+	<cstdio>
+	<cmath>
+	<algorithm>
+	"mat.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/mesh.cpp
+	<cstdio>
+	<cassert>
+	<string>
+	<algorithm>
+	"vec.h"
+	"mesh.h"
+	"program.h"
+	"uniforms.h"
+	"window.h"
+
+1546212903 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/orbiter.cpp
+	<cstdio>
+	<algorithm>
+	"orbiter.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/program.cpp
+	<fstream>
+	<sstream>
+	<string>
+	<vector>
+	<algorithm>
+	<climits>
+	"program.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/rgbe.cpp
+	<cmath>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<ctype.h>
+	"rgbe.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/text.cpp
+	<ctype.h>
+	<cstdio>
+	<cstdarg>
+	"program.h"
+	"uniforms.h"
+	"image.h"
+	"image_io.h"
+	"texture.h"
+	"text.h"
+	"window.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/texture.cpp
+	<cassert>
+	<cstdio>
+	<algorithm>
+	"texture.h"
+	"image_io.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/uniforms.cpp
+	<cstdio>
+	<set>
+	"program.h"
+	"uniforms.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/vec.cpp
+	<cmath>
+	"vec.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/wavefront.cpp
+	<cstdio>
+	<ctype.h>
+	<climits>
+	<algorithm>
+	"wavefront.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/widgets.cpp
+	<cstdio>
+	<cassert>
+	<cstring>
+	<vector>
+	<algorithm>
+	"window.h"
+	"widgets.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/widgets.h
+	"text.h"
+	"widgets.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/gKit/window.cpp
+	<sys/stat.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<cassert>
+	<cstdio>
+	<vector>
+	<set>
+	<string>
+	<cstdio>
+	<cstring>
+	<iostream>
+	<SDL2/SDL_power.h>
+	"glcore.h"
+	"window.h"
+
+1546003517 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/master_CharAnim/main.cpp
+	"ViewerBasic.h"
+
+1546215915 /home/pin/Desktop/Project/gkit2light-master_CharAnim/src/master_CharAnim/ViewerBasic.h
+	"glcore.h"
+	"window.h"
+	"program.h"
+	"texture.h"
+	"mesh.h"
+	"draw.h"
+	"vec.h"
+	"mat.h"
+	"orbiter.h"
+	"app.h"
+	"Terrain.h"
+
+1546348212 /home/pin/Desktop/Project/gkit2light-master_CharAnim/include/Terrain.h
+	<vector>
+	"mat.h"
+	"image_io.h"
+	"mesh.h"
+	"program.h"
+	"uniforms.h"
+	"wavefront.h"
+	"texture.h"
+	"Box.h"
+	"Shadow_map.h"
+	"CubeMap.h"
+	"Spaceship.h"
+	"Frustum.h"
+
+1546003517 /home/pin/Desktop/Project/gkit2light-master_CharAnim/include/Shadow_map.h
+	"mat.h"
+	"/usr/include/GL/glew.h"
+
+1503603001 /usr/include/GL/glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1546114126 /home/pin/Desktop/Project/gkit2light-master_CharAnim/include/Spaceship.h
+	"mesh.h"
+	"wavefront.h"
+	"program.h"
+	"orbiter.h"
+	"uniforms.h"
+
+1546212969 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/master_CharAnim/ViewerBasic.cpp
+	<cassert>
+	<cmath>
+	<cstdio>
+	<iostream>
+	<ViewerBasic.h>
+
+1546345677 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/Plane.cpp
+	"Plane.h"
+
+1546213544 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/Shadow_map.cpp
+	"Shadow_map.h"
+
+1546114088 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/Spaceship.cpp
+	"Spaceship.h"
+
+1546388868 source:/home/pin/Desktop/Project/gkit2light-master_CharAnim/src/Terrain.cpp
+	"Terrain.h"
+
+1546347754 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Box.cpp
+	"Box.h"
+
+1546347565 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Box.h
+	"mesh.h"
+	"draw.h"
+	"wavefront.h"
+	<vector>
+	"vec.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/mesh.h
+	<vector>
+	<unordered_map>
+	"glcore.h"
+	"vec.h"
+	"mat.h"
+	"color.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/glcore.h
+	<OpenGL/gl3.h>
+	"GL/glew.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/vec.h
+	<iostream>
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/mat.h
+	"vec.h"
+	<iostream>
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/color.h
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/draw.h
+	"mesh.h"
+	"orbiter.h"
+	"window.h"
+
+1546106819 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/orbiter.h
+	"vec.h"
+	"mat.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/window.h
+	<SDL2/SDL.h>
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/wavefront.h
+	"mesh.h"
+
+1546267904 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/CubeMap.cpp
+	"CubeMap.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/CubeMap.h
+	"orbiter.h"
+	"image_io.h"
+	"program.h"
+	"uniforms.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/image_io.h
+	"image.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/image.h
+	<cmath>
+	<vector>
+	<cassert>
+	<algorithm>
+	"color.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/program.h
+	<string>
+	"glcore.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/uniforms.h
+	<string>
+	"glcore.h"
+	"vec.h"
+	"mat.h"
+	"color.h"
+
+1546347664 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Frustum.cpp
+	"Frustum.h"
+
+1546347842 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Frustum.h
+	"Plane.h"
+	"Box.h"
+
+1546346066 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Plane.h
+	"mat.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/app.cpp
+	<cstdio>
+	<cstring>
+	"app.h"
+	"glcore.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/app.h
+	"window.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/app_time.cpp
+	<chrono>
+	"app_time.h"
+	"texture.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/app_time.h
+	"glcore.h"
+	"app.h"
+	"text.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/text.h
+	"glcore.h"
+	"color.h"
+	"text.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/texture.h
+	"glcore.h"
+	"image.h"
+	"image_io.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/color.cpp
+	"color.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/draw.cpp
+	"draw.h"
+	"window.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/gamepads.cpp
+	<cassert>
+	<vector>
+	<stdio.h>
+	"gamepads.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/gamepads.h
+	<SDL2/SDL.h>
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/image.cpp
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/image_hdr.cpp
+	<string>
+	"rgbe.h"
+	"image_hdr.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/rgbe.h
+	<cstdio>
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/image_hdr.h
+	"image.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/image_io.cpp
+	<cstdio>
+	<string>
+	<algorithm>
+	<cmath>
+	<SDL2_image/SDL_image.h>
+	<SDL2/SDL_image.h>
+	"image_io.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/mat.cpp
+	<cassert>
+	<cstdio>
+	<cmath>
+	<algorithm>
+	"mat.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/mesh.cpp
+	<cstdio>
+	<cassert>
+	<string>
+	<algorithm>
+	"vec.h"
+	"mesh.h"
+	"program.h"
+	"uniforms.h"
+	"window.h"
+
+1546212903 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/orbiter.cpp
+	<cstdio>
+	<algorithm>
+	"orbiter.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/program.cpp
+	<fstream>
+	<sstream>
+	<string>
+	<vector>
+	<algorithm>
+	<climits>
+	"program.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/rgbe.cpp
+	<cmath>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<ctype.h>
+	"rgbe.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/text.cpp
+	<ctype.h>
+	<cstdio>
+	<cstdarg>
+	"program.h"
+	"uniforms.h"
+	"image.h"
+	"image_io.h"
+	"texture.h"
+	"text.h"
+	"window.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/texture.cpp
+	<cassert>
+	<cstdio>
+	<algorithm>
+	"texture.h"
+	"image_io.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/uniforms.cpp
+	<cstdio>
+	<set>
+	"program.h"
+	"uniforms.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/vec.cpp
+	<cmath>
+	"vec.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/wavefront.cpp
+	<cstdio>
+	<ctype.h>
+	<climits>
+	<algorithm>
+	"wavefront.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/widgets.cpp
+	<cstdio>
+	<cassert>
+	<cstring>
+	<vector>
+	<algorithm>
+	"window.h"
+	"widgets.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/widgets.h
+	"text.h"
+	"widgets.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/gKit/window.cpp
+	<sys/stat.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<cassert>
+	<cstdio>
+	<vector>
+	<set>
+	<string>
+	<cstdio>
+	<cstring>
+	<iostream>
+	<SDL2/SDL_power.h>
+	"glcore.h"
+	"window.h"
+
+1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/master_CharAnim/main.cpp
+	"ViewerBasic.h"
+
+1546215915 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/master_CharAnim/ViewerBasic.h
+	"glcore.h"
+	"window.h"
+	"program.h"
+	"texture.h"
+	"mesh.h"
+	"draw.h"
+	"vec.h"
+	"mat.h"
+	"orbiter.h"
+	"app.h"
+	"Terrain.h"
+
+1546348212 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Terrain.h
+	<vector>
+	"mat.h"
+	"image_io.h"
+	"mesh.h"
+	"program.h"
+	"uniforms.h"
+	"wavefront.h"
+	"texture.h"
+	"Box.h"
+	"Shadow_map.h"
+	"CubeMap.h"
+	"Spaceship.h"
+	"Frustum.h"
+
+1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Shadow_map.h
+	"mat.h"
+	"/usr/include/GL/glew.h"
+
+1546114126 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Spaceship.h
+	"mesh.h"
+	"wavefront.h"
+	"program.h"
+	"orbiter.h"
+	"uniforms.h"
+
+1546212969 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/master_CharAnim/ViewerBasic.cpp
+	<cassert>
+	<cmath>
+	<cstdio>
+	<iostream>
+	<ViewerBasic.h>
+
+1546345677 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Plane.cpp
+	"Plane.h"
+
+1546213544 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Shadow_map.cpp
+	"Shadow_map.h"
+
+1546114088 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Spaceship.cpp
+	"Spaceship.h"
+
+1546388868 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Terrain.cpp
+	"Terrain.h"
+
