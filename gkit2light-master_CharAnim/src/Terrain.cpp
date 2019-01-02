@@ -40,19 +40,26 @@ void Terrain::loadTerrain(const char* filename)
                 cube_number++;
             }
             m_boxs.push_back(Box(scale_factor, Point(x,0,y),count,cube_number));
-
-
-            static_light_pos.push_back(Point(vec3(x+32,int(data(x, y).r/max_height*layer),y+32)));
-
             count += cube_number;
             cout<<"Cube numbers: "<<cube_number<<endl;
             cube_number = 0;
         }
     }
+
+    static_light_pos.push_back(m_cubePos[23000]);
+    static_light_pos.push_back(m_cubePos[10455]);
+    static_light_pos.push_back(m_cubePos[34800]);
+    static_light_pos.push_back(m_cubePos[997]);
+    static_light_pos.push_back(m_cubePos[30980]);
+    static_light_pos.push_back(m_cubePos[39168]);
+    static_light_pos.push_back(m_cubePos[35072]);
+    static_light_pos.push_back(m_cubePos[39168+64*2+32]); //
+    static_light_pos.push_back(m_cubePos[52870]);
 }
 
 void Terrain::init_terrain() // bind VAO and VBO
 {
+    volume.setCamInternals(45,window_width()/window_height(),0.1,500);
     m_model = Scale(1,1,1);
     m_cubemap.init();
     m_terrain_mesh = read_mesh("data/cube.obj");
@@ -125,6 +132,7 @@ float ran()
 }
 void Terrain::draw_terrain(Orbiter &camera)
 {
+    m_model = Scale(Scale_box,Scale_box,Scale_box);
     m_camera = camera;
     m_view  = m_camera.view();
     m_projection = m_camera.projection(window_width(),window_height(),45);
@@ -141,6 +149,7 @@ void Terrain::draw_terrain(Orbiter &camera)
     program_uniform(m_terrain_program, "lightPos",lightPos);
     program_uniform(m_terrain_program, "lightColor",Point(1.0f, 1.0f, 1.0f));
     program_uniform(m_terrain_program, "adjust",m_adjust);
+    program_uniform(m_terrain_program, "layer",layer);
 
 
     glActiveTexture(GL_TEXTURE0);
@@ -182,28 +191,28 @@ void Terrain::draw_terrain(Orbiter &camera)
         light_constant[11] =  i+'0';
         light_lightnear[11] =  i+'0';
         light_quadratic[11] =  i+'0';
-        int offset = 30*i;
-        float off_X = offset*sin(global_time()/5000);
-        float off_Z = offset*cos(global_time()/5000);
 
-        Point l_pos = Point(static_light_pos[i].x+i,static_light_pos[i].y-2,static_light_pos[i].z+i);
+        Point l_pos = Point(static_light_pos[i-1].x,static_light_pos[i-1].y-2,static_light_pos[i-1].z);
         program_uniform(m_terrain_program,light_pos, l_pos);
-
-        program_uniform(m_terrain_program,light_ambient, vec3( 1 , 0.1 + 0.3*sin(global_time()/1000), 0.1 + 0.3*cos(global_time()/1000) ));
-        program_uniform(m_terrain_program,light_diffuse, vec3(1  , 0.2, 0.5));
+        float cos1 = abs(cos(i+global_time()/1000));
+        float sin1 = abs(sin(i+global_time()/1000));
+        program_uniform(m_terrain_program,light_ambient, vec3( cos1, sin1*cos1,sin1));
+        program_uniform(m_terrain_program,light_diffuse, vec3(cos1, sin1*cos1,sin1));
         program_uniform(m_terrain_program,light_specular, vec3(0.5, 0.5, 0.5));
 
-        program_uniform(m_terrain_program,light_constant, float(0.1));
+        program_uniform(m_terrain_program,light_constant, float(1.5));
 
-        program_uniform(m_terrain_program,light_lightnear, float(0.09));
+        program_uniform(m_terrain_program,light_lightnear, float(0.03));
 
         program_uniform(m_terrain_program,light_quadratic, float(0.01));
 
     }
     glBindVertexArray(terrain_vao);
     for(int i=0 ; i<m_boxs.size(); i++) // Test visibility
+    {
+     if(volume.boxInFrustum(m_boxs[i])) //De-comment this line to see the visibility test
      glDrawArraysInstancedBaseInstance(GL_TRIANGLES,0, m_terrain_mesh.vertex_count(), m_boxs[i].m_number_cubes,m_boxs[i].ID_INSTANCE);
-
+    }
     glUseProgram(0);
     glBindVertexArray(0);
     glActiveTexture(0);

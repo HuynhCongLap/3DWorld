@@ -346,10 +346,10 @@
 1546002757 source:/home/pin/Desktop/github/3DWorld/gkit2light-master_CharAnim/src/CubeMap.cpp
 	"CubeMap.h"
 
-1546003517 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Box.cpp
+1546347754 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Box.cpp
 	"Box.h"
 
-1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Box.h
+1546347565 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Box.h
 	"mesh.h"
 	"draw.h"
 	"wavefront.h"
@@ -610,7 +610,7 @@
 	"app.h"
 	"Terrain.h"
 
-1546266431 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Terrain.h
+1546348212 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Terrain.h
 	<vector>
 	"mat.h"
 	"image_io.h"
@@ -623,6 +623,7 @@
 	"Shadow_map.h"
 	"CubeMap.h"
 	"Spaceship.h"
+	"Frustum.h"
 
 1546003517 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Shadow_map.h
 	"mat.h"
@@ -638,7 +639,7 @@
 1546213544 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Shadow_map.cpp
 	"Shadow_map.h"
 
-1546268050 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Terrain.cpp
+1546348294 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Terrain.cpp
 	"Terrain.h"
 
 1546114126 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Spaceship.h
@@ -650,4 +651,17 @@
 
 1546114088 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Spaceship.cpp
 	"Spaceship.h"
+
+1546347664 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Frustum.cpp
+	"Frustum.h"
+
+1546347842 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Frustum.h
+	"Plane.h"
+	"Box.h"
+
+1546346066 /home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/include/Plane.h
+	"mat.h"
+
+1546345677 source:/home/pin/Desktop/Github/3DWorld/gkit2light-master_CharAnim/src/Plane.cpp
+	"Plane.h"
 

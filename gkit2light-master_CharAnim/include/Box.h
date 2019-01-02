@@ -17,6 +17,14 @@ class Box
 
         int ID_INSTANCE;
         int m_number_cubes;
+
+        Vector corner;
+        float x,y,z;
+        void setBox( Vector corner, float x, float y, float z);
+
+        // for use in frustum computations
+        Vector getVertexP(Vector normal);
+        Vector getVertexN(Vector normal);
     protected:
 
     private:

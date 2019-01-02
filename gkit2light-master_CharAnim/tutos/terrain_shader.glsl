@@ -60,6 +60,7 @@ uniform vec3 lightPos;
 uniform vec3 viewPos;
 uniform vec3 lightColor;
 uniform float adjust;
+uniform int layer;
 in vec4 screenPos;
 
 struct PointLight {
@@ -124,37 +125,39 @@ void main( )
     // calculate reflect
     vec3 m= reflect(normalize(fs_in.FragPos - camera_pos_inverse), normalize(fs_in.Normal));
     vec4 color1= texture(texture0, m);
+    float slope = 1.0 - fs_in.Normal.y;
+    vec3 normal = normalize(fs_in.Normal);
 
-    if(fs_in.FragPos.y > 17){
+    if(fs_in.FragPos.y > layer*0.85){
      	textcolor = texture(ice_texture, vertex_texcoord);
 	color = vec3(textcolor);
     }
     else
-       if(fs_in.FragPos.y > 14)
+       if(fs_in.FragPos.y > layer*0.7 && slope > 0.01)
 	{
 		textcolor = texture(top_texture, vertex_texcoord);
 		color = vec3(textcolor);
 	}
 	 else
-       if(fs_in.FragPos.y > 10)
+       if(fs_in.FragPos.y > layer*0.65 && slope < 0.01)
 	{
 		textcolor = texture(top_grass, vertex_texcoord);
 		color = vec3(textcolor);
 	}
 	 else
-       if(fs_in.FragPos.y > 7)
+       if(fs_in.FragPos.y > layer*0.4 && slope > 0.5)
 	{
 		textcolor = texture(grass_side_texture, vertex_texcoord);
 		color = vec3(textcolor);
 	}
 	 else
-       if(fs_in.FragPos.y > 5)
+       if(fs_in.FragPos.y > layer*0.2 && slope < 0.01)
 	{
 		textcolor = texture(mou_texture, vertex_texcoord);
 		color = vec3(textcolor);
 	}
 	 else
-       if(fs_in.FragPos.y > 1)
+       if(fs_in.FragPos.y > layer*0.1)
 	{
 		textcolor = texture(land_texture, vertex_texcoord);
 		color = vec3(textcolor);
@@ -164,7 +167,7 @@ void main( )
   
 	}
 
-    vec3 normal = normalize(fs_in.Normal);
+
     vec3 lightColor = lightColor;
     // ambient
     vec3 ambient = 0.3 * color;

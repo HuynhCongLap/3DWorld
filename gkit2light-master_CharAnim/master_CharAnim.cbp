@@ -131,11 +131,15 @@
 		</Build>
 		<Unit filename="include/Box.h" />
 		<Unit filename="include/CubeMap.h" />
+		<Unit filename="include/Frustum.h" />
+		<Unit filename="include/Plane.h" />
 		<Unit filename="include/Shadow_map.h" />
 		<Unit filename="include/Spaceship.h" />
 		<Unit filename="include/Terrain.h" />
 		<Unit filename="src/Box.cpp" />
 		<Unit filename="src/CubeMap.cpp" />
+		<Unit filename="src/Frustum.cpp" />
+		<Unit filename="src/Plane.cpp" />
 		<Unit filename="src/Shadow_map.cpp" />
 		<Unit filename="src/Spaceship.cpp" />
 		<Unit filename="src/Terrain.cpp" />

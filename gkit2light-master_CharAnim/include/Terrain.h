@@ -14,6 +14,7 @@
 #include "Shadow_map.h"
 #include "CubeMap.h"
 #include "Spaceship.h"
+#include "Frustum.h"
 using namespace std;
 
 
@@ -40,17 +41,19 @@ class Terrain
         //-----------Spaceship-----------------------
         void getSpaceShipPositition(Point pos)
         {
+            volume.setCamDef(Vector(m_camera.position()),Vector(pos),Vector(0,1,0));
             m_space_ship_pos = pos;
             m_space_ship_model = Translation(pos.x,pos.y,pos.z)*RotationY(-global_time()/10)*Scale(0.01,0.005,0.01);
 
         }
+        int Scale_box = 1;
     protected:
 
     private:
         Orbiter m_camera;
     //------------------TERRAIN ATRIBUTE-----------------------------
         float max_height = 0;
-        int layer = 20; // number of layer in terrain, like in minecraft, 255 layer base on altitude
+        int layer = 15*Scale_box; // number of layer in terrain, like in minecraft, 255 layer base on altitude
         std::vector<vec3> m_cubePos ; // cube position
         Mesh m_terrain_mesh;
         unsigned int m_terrain_program, m_simple_terrain_program; // terrain shader
@@ -77,7 +80,7 @@ class Terrain
         Spaceship m_space_ship;
         Point m_space_ship_pos;
         int nb_light = 10;
-        vector <Point> static_light_pos;
+        vector <vec3> static_light_pos;
         //-----------------------------------------------
          char light_pos[30] = "pointLight[0].position";
          char light_ambient[30] = "pointLight[0].ambient";
@@ -87,6 +90,7 @@ class Terrain
          char light_lightnear[30] = "pointLight[0].lightnear";
          char light_quadratic[30] =  "pointLight[0].quadratic";
     //-------------------FRUSTRUM-------------------------------------
+         Frustum volume;
 
 };
 
